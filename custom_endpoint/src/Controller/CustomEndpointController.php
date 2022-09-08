@@ -15,7 +15,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class CustomEndpointController extends ControllerBase {
 
     /**
-    *
     * @param AccountInterface $currentUserClass constructor
     */
     public function __construct(AccountInterface $currentUser) {
