@@ -1,0 +1,4 @@
+services:
+  custom_endpoint.currentUser:
+    class: Drupal\custom_endpoint\CustomEndPointController
+    arguments: ['@current_user']

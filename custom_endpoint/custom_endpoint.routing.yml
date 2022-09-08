@@ -1,0 +1,8 @@
+custom_endpoint.jsonapi:
+  path: '/api/currentuser'
+  defaults:
+    _controller: '\Drupal\custom_endpoint\Controller\CustomEndpointController::renderApi'
+    _title: 'Current user data'
+  methods:  ['GET']
+  requirements:
+    _access: 'TRUE'
