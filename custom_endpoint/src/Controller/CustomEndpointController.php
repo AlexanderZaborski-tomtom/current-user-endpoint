@@ -25,7 +25,7 @@ class CustomEndpointController extends ControllerBase {
     /**
     * Gets the current user
     */
-    public static function create(ContainerInterface $container) {
+    public static function create(ContainerInterface $container) : CustomEndpointController {
       return new static(
         $container->get('current_user'),
       );
@@ -45,7 +45,7 @@ class CustomEndpointController extends ControllerBase {
     * Get current user data
     * or return an error message
     */
-    public function getResults() {
+    public function getResults() : array {
 
       //Try to get user data
       try {
