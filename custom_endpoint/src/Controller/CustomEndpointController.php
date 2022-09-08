@@ -15,16 +15,16 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class CustomEndpointController extends ControllerBase {
 
     /**
-     *
-     * @param AccountInterface $currentUserClass constructor
-     */
+    *
+    * @param AccountInterface $currentUserClass constructor
+    */
     public function __construct(AccountInterface $currentUser) {
       $this->currentUser = $currentUser;
     }
 
     /**
-     * Gets the current user
-     */
+    * Gets the current user
+    */
     public static function create(ContainerInterface $container) {
       return new static(
         $container->get('current_user'),
@@ -32,19 +32,19 @@ class CustomEndpointController extends ControllerBase {
     }
 
     /**
-     * @return JsonResponse
-     */
-    public function renderApi() {
+    * @return JsonResponse
+    */
+    public function renderApi() : JsonResponse {
       return new JsonResponse([
         'data' => $this->getResults(),
         'method' => 'GET',
       ]);
     }
 
-      /**
-       * Get current user data
-       * or return an error message
-       */
+    /**
+    * Get current user data
+    * or return an error message
+    */
     public function getResults() {
 
       //Try to get user data
