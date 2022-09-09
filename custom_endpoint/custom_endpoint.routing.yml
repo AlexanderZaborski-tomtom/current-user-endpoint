@@ -3,6 +3,6 @@ custom_endpoint.jsonapi:
   defaults:
     _controller: '\Drupal\custom_endpoint\Controller\CustomEndpointController::renderApi'
     _title: 'Current user data'
-  methods:  ['GET']
+  methods: ['GET']
   requirements:
     _access: 'TRUE'
