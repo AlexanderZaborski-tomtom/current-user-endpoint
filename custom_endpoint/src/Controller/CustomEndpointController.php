@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class CustomEndpointController extends ControllerBase {
 
   /**
-   * @param AccountInterface $currentUserClass constructor
+   * @param AccountInterface $currentUser constructor
    */
   public function __construct(AccountInterface $currentUser) {
     $this->currentUser = $currentUser;
@@ -30,7 +30,7 @@ class CustomEndpointController extends ControllerBase {
   }
 
   /**
-   * @return JsonResponse
+   * @return JsonResponse with user data
    */
   public function renderApi(): JsonResponse {
 

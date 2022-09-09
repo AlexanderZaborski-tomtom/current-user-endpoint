@@ -5,8 +5,8 @@ namespace Drupal\custom_endpoint;
 class CustomEndpointService {
 
   /**
-   * Get current user data
-   * or return an error message
+   * Return current user data
+   * or return an error message.
    */
   public function getResults($currentUser): array {
     //Try to get user data
