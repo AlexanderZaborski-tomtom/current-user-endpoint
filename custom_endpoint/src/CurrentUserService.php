@@ -2,7 +2,7 @@
 
 namespace Drupal\custom_endpoint;
 
-class CustomEndpointService {
+class CurrentUserService {
 
   /**
    * Return current user data
