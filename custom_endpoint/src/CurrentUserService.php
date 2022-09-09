@@ -4,6 +4,10 @@ namespace Drupal\custom_endpoint;
 
 class CurrentUserService {
 
+  public function __construct(AccountInterface $currentUser) {
+    $this->currentUser = $currentUser;
+  }
+
   /**
    * Return current user data
    * or return an error message.
