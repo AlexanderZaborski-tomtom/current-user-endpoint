@@ -33,47 +33,12 @@ class CustomEndpointController extends ControllerBase {
    * @return JsonResponse
    */
   public function renderApi(): JsonResponse {
+
+    $currentUserService = \Drupal::service('custom_endpoint.currentUser');
     return new JsonResponse([
-      'data' => $this->getResults(),
+      'data' => $currentUserService->getResults($this->currentUser),
       'method' => 'GET',
     ]);
-  }
-
-  /**
-   * Get current user data
-   * or return an error message
-   */
-  public function getResults(): array {
-
-    //Try to get user data
-    try {
-      $username = $this->currentUser->getAccountName();
-      $created = $this->currentUser->get['created'];
-      $moddate = $this->currentUser->getLastAccessedTime();
-      $lastlogon = $this->currentUser->getLastAccessedTime();
-
-      if ($username == "") {
-        return "You are not logged in.";
-      }
-      else {
-        //user data output
-        return [
-          [
-            "username" => $username,
-            "created" => date("d F Y H:i:s", $created),
-            "moddate" => date("d F Y H:i:s", $moddate),
-            "lastlogon" => date("d F Y H:i:s", $lastlogon),
-          ],
-        ];
-      }
-    }
-    //Return error message
-    catch (\Throwable $th) {
-      //throw $th;
-      return [
-        "error" => $th->getMessage(),
-      ];
-    }
   }
 
 }

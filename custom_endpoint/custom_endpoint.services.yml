@@ -1,0 +1,3 @@
+services:
+    custom_endpoint.currentUser:
+        class: \Drupal\custom_endpoint\CustomEndpointService
