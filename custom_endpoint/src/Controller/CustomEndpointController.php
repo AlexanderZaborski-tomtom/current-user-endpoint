@@ -36,9 +36,8 @@ class CustomEndpointController extends ControllerBase {
    */
   public function renderApi(): JsonResponse {
 
-    $currentUserService = \Drupal::service('custom_endpoint.currentUser');
     return new JsonResponse([
-      'data' => $currentUserService->getResults($this->currentUser),
+      'data' => $this->currentUserService->getResults($this->currentUser),
       'method' => 'GET',
     ]);
   }
