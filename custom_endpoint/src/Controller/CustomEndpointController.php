@@ -22,6 +22,8 @@ class CustomEndpointController extends ControllerBase {
     $this->currentUser = $currentUser;
   }
 
+  //test
+
   /**
    * Gets the current user
    */
