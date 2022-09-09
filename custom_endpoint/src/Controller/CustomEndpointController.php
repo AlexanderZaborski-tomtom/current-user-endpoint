@@ -27,7 +27,7 @@ class CustomEndpointController extends ControllerBase {
    */
   public static function create(ContainerInterface $container): CustomEndpointController {
     return new static(
-      $container->get('current_user'),
+      $container->get('custom_endpoint.current_user_service')
     );
   }
 
