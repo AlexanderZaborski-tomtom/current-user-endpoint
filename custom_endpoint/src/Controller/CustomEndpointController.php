@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class CustomEndpointController extends ControllerBase {
 
   /**
-   * @param AccountInterface $currentUser constructor
+   * @param \Drupal\Core\Session\AccountInterface
    */
   public function __construct(AccountInterface $currentUser) {
     $this->currentUser = $currentUser;
