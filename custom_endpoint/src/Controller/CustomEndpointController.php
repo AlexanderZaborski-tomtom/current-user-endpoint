@@ -22,11 +22,13 @@ class CustomEndpointController extends ControllerBase {
    * @param \Drupal\Core\Session\AccountInterface
    */
   public function __construct(CurrentUserService $currentUser) {
-    $this->currentUser = $currentUser;
+    $this->currentUserService = $currentUser;
   }
 
   /**
    * Gets the current user service
+   *
+   * @param Drupal\custom_endpoint\CurrentUserService
    */
   public static function create(ContainerInterface $container): CustomEndpointController {
     return new static(
@@ -36,11 +38,13 @@ class CustomEndpointController extends ControllerBase {
 
   /**
    * @return JsonResponse with user data
+   *
+   * @param \Symfony\Component\HttpFoundation\JsonResponse
    */
   public function renderApi(): JsonResponse {
 
     return new JsonResponse([
-      'data' => $container->getResults(),
+      'data' => $this->currentUserService->getResults(),
       'method' => 'GET',
     ]);
   }
