@@ -7,6 +7,7 @@ use Drupal\Core\Session\AccountProxy;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\custom_endpoint\CurrentUserService;
 
 /**
  * Custom Endpoint Controller class
@@ -18,7 +19,7 @@ class CustomEndpointController extends ControllerBase {
    *
    * @param \Drupal\Core\Session\AccountInterface
    */
-  public function __construct(AccountInterface $currentUser) {
+  public function __construct(CurrentUserService $currentUser) {
     $this->currentUser = $currentUser;
   }
 
@@ -37,7 +38,7 @@ class CustomEndpointController extends ControllerBase {
   public function renderApi(): JsonResponse {
 
     return new JsonResponse([
-      'data' => $this->currentUserService->getResults($this->currentUser),
+      'data' => $container->getResults($this->currentUser),
       'method' => 'GET',
     ]);
   }
