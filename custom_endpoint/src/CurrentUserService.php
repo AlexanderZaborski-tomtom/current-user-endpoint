@@ -17,13 +17,13 @@ class CurrentUserService {
    * Return current user data
    * or return an error message.
    */
-  public function getResults($currentUser): array {
+  public function getResults(): array {
     //Try to get user data
     try {
-      $username = $currentUser->getAccountName();
-      $created = $currentUser->get['created'];
-      $moddate = $currentUser->getLastAccessedTime();
-      $lastlogon = $currentUser->getLastAccessedTime();
+      $username = $this->currentUser->getAccountName();
+      $created = $this->currentUser->get['created'];
+      $moddate = $this->currentUser->getLastAccessedTime();
+      $lastlogon = $this->currentUser->getLastAccessedTime();
 
       if ($username == "") {
         return "You are not logged in.";

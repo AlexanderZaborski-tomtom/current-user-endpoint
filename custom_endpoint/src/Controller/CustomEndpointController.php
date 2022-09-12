@@ -14,6 +14,8 @@ use Drupal\custom_endpoint\CurrentUserService;
  */
 class CustomEndpointController extends ControllerBase {
 
+  public $currentUserService;
+
   /**
    * Custom Endpoint controller constructor
    *
@@ -24,7 +26,7 @@ class CustomEndpointController extends ControllerBase {
   }
 
   /**
-   * Gets the current user
+   * Gets the current user service
    */
   public static function create(ContainerInterface $container): CustomEndpointController {
     return new static(
@@ -38,7 +40,7 @@ class CustomEndpointController extends ControllerBase {
   public function renderApi(): JsonResponse {
 
     return new JsonResponse([
-      'data' => $container->getResults($this->currentUser),
+      'data' => $container->getResults(),
       'method' => 'GET',
     ]);
   }
