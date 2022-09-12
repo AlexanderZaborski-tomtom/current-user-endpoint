@@ -19,7 +19,7 @@ class CustomEndpointController extends ControllerBase {
   /**
    * Custom Endpoint controller constructor
    *
-   * @param \Drupal\Core\Session\AccountInterface
+   * @param Drupal\custom_endpoint\CurrentUserService
    */
   public function __construct(CurrentUserService $currentUser) {
     $this->currentUserService = $currentUser;
@@ -28,7 +28,7 @@ class CustomEndpointController extends ControllerBase {
   /**
    * Gets the current user service
    *
-   * @param Drupal\custom_endpoint\CurrentUserService
+   * @param \Symfony\Component\DependencyInjection\ContainerInterface;
    */
   public static function create(ContainerInterface $container): CustomEndpointController {
     return new static(
