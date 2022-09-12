@@ -4,7 +4,7 @@ namespace Drupal\custom_endpoint;
 
 class CurrentUserService {
 
-  public function __construct(AccountInterface $currentUser): AccountProxy {
+  public function __construct(AccountInterface $currentUser) {
     $currentUser = $this->container()->get('current_user');
   }
 
