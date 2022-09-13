@@ -38,17 +38,17 @@ class CurrentUserService {
 
       if ($username == '') {
         return [
-          "error" => "You are not logged in",
+          'error' => 'You are not logged in',
         ];
       }
       else {
         //user data output
         return [
           [
-            "username" => $username,
-            "created" => date("d F Y H:i:s", $created),
-            "moddate" => date("d F Y H:i:s", $moddate),
-            "lastlogon" => date("d F Y H:i:s", $lastlogon),
+            'username' => $username,
+            'created' => date('d F Y H:i:s', $created),
+            'moddate' => date('d F Y H:i:s', $moddate),
+            'lastlogon' => date('d F Y H:i:s', $lastlogon),
           ],
         ];
       }
@@ -57,7 +57,7 @@ class CurrentUserService {
     catch (\Throwable $th) {
       //throw $th;
       return [
-        "error" => $th->getMessage(),
+        'error' => $th->getMessage(),
       ];
     }
   }
