@@ -9,7 +9,7 @@ use Drupal\Core\Session\AccountInterface;
  */
 class CurrentUserService {
 
-  protected $currentUser;
+  protected $current_user;
 
   /**
    * Custom endpoint service controller
@@ -17,7 +17,7 @@ class CurrentUserService {
    * @param \Drupal\Core\Session\AccountInterface
    */
   public function __construct(AccountInterface $current_user) {
-    $this->currentUser = $current_user;
+    $this->current_user = $current_user;
   }
 
   /**
@@ -27,10 +27,10 @@ class CurrentUserService {
   public function getResults(): array {
     //Try to get user data
     try {
-      $username = $this->currentUser->getAccountName();
-      $created = $this->currentUser->get['created']->value;
-      $moddate = $this->currentUser->getLastAccessedTime();
-      $lastlogon = $this->currentUser->getLastAccessedTime();
+      $username = $this->current_user->getAccountName();
+      $created = $this->current_user->get['created']->value;
+      $moddate = $this->current_user->getLastAccessedTime();
+      $lastlogon = $this->current_user->getLastAccessedTime();
 
       if ($username == '') {
         return [
