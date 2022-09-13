@@ -7,4 +7,3 @@ custom_endpoint.jsonapi:
   requirements:
     _user_is_logged_in: 'TRUE'
     
-    
