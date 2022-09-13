@@ -1,4 +1,4 @@
-custom_endpoint.jsonapi:
+custom_endpoint.currentuser:
   path: '/api/currentuser'
   defaults:
     _controller: '\Drupal\custom_endpoint\Controller\CurrentUserController::renderApi'
@@ -6,4 +6,12 @@ custom_endpoint.jsonapi:
   methods: ['GET']
   requirements:
     _user_is_logged_in: 'TRUE'
- 
+custom_endpoint.timestampusers:
+  path: '/api/testroute'
+  defaults:
+    _controller: '\Drupal\custom_endpoint\Controller\TimestampUsersController::renderApi'
+    _title: 'Timestamp users data'
+  methods: ['GET']
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  
