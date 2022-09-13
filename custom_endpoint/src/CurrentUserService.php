@@ -11,7 +11,8 @@ class CurrentUserService {
 
   /**
    * Variable to store the current user
-   * @var type \Drupal\Core\Session\AccountInterface
+   *
+   * @var \Drupal\Core\Session\AccountInterface
    */
   protected $current_user;
 

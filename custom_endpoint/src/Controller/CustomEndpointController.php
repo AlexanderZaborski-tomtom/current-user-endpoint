@@ -16,7 +16,8 @@ class CustomEndpointController extends ControllerBase {
 
   /**
    * Variable to store the Current User service
-   * @var type \Drupal\custom_endpoint\CurrentUserService
+   *
+   * @var \Drupal\custom_endpoint\CurrentUserService
    */
   private $currentUserService;
 
