@@ -14,7 +14,7 @@ use Drupal\custom_endpoint\CurrentUserService;
  */
 class CustomEndpointController extends ControllerBase {
 
-  public $currentUserService;
+  private $currentUserService;
 
   /**
    * Custom Endpoint controller constructor
