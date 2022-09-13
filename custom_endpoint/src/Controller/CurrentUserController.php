@@ -12,7 +12,7 @@ use Drupal\custom_endpoint\CurrentUserService;
 /**
  * Custom Endpoint Controller class
  */
-class CustomEndpointController extends ControllerBase {
+class CurrentUserController extends ControllerBase {
 
   /**
    * Variable to store the Current User service
@@ -34,7 +34,7 @@ class CustomEndpointController extends ControllerBase {
    *
    * @param \Symfony\Component\DependencyInjection\ContainerInterface;
    */
-  public static function create(ContainerInterface $container): CustomEndpointController {
+  public static function create(ContainerInterface $container): CurrentUserController {
     return new static(
       $container->get('custom_endpoint.current_user_service')
     );
