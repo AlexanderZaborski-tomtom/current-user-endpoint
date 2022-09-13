@@ -6,4 +6,4 @@ custom_endpoint.jsonapi:
   methods: ['GET']
   requirements:
     _user_is_logged_in: 'TRUE'
-    
+ 
