@@ -17,12 +17,11 @@ class CustomEndpointController extends ControllerBase {
   private $currentUserService;
 
   /**
-   * Custom Endpoint controller constructor
-   *
-   * @param Drupal\custom_endpoint\CurrentUserService
+   * @param \Drupal\custom_endpoint\CurrentUserService $current_user
+   * The current user service.
    */
-  public function __construct(CurrentUserService $currentUser) {
-    $this->currentUserService = $currentUser;
+  public function __construct(CurrentUserService $current_user) {
+    $this->currentUserService = $current_user;
   }
 
   /**
