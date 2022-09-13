@@ -25,7 +25,7 @@ class CurrentUserService {
     //Try to get user data
     try {
       $username = $this->currentUser->getAccountName();
-      $created = $this->currentUser->get['created'];
+      $created = $this->currentUser->get['created']->value;
       $moddate = $this->currentUser->getLastAccessedTime();
       $lastlogon = $this->currentUser->getLastAccessedTime();
 
