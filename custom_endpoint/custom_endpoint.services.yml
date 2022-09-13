@@ -1,0 +1,5 @@
+services:
+  custom_endpoint.current_user_service:
+    class: \Drupal\custom_endpoint\CurrentUserService
+    arguments: ['@current_user']
+    
