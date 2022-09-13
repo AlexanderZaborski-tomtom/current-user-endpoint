@@ -29,8 +29,10 @@ class CurrentUserService {
       $moddate = $this->currentUser->getLastAccessedTime();
       $lastlogon = $this->currentUser->getLastAccessedTime();
 
-      if ($username == "") {
-        return "You are not logged in.";
+      if ($username == '') {
+        return [
+          "error" => "You are not logged in",
+        ];
       }
       else {
         //user data output
