@@ -4,6 +4,9 @@ namespace Drupal\custom_endpoint;
 
 use Drupal\Core\Session\AccountInterface;
 
+/**
+ * Custom Endpoint Service class
+ */
 class CurrentUserService {
 
   protected $currentUser;
