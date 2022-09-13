@@ -7,7 +7,7 @@ custom_endpoint.currentuser:
   requirements:
     _user_is_logged_in: 'TRUE'
 custom_endpoint.timestampusers:
-  path: '/api/testroute'
+  path: '/api/timestampuser/{start_data}/{end_date}'
   defaults:
     _controller: '\Drupal\custom_endpoint\Controller\TimestampUsersController::renderApi'
     _title: 'Timestamp users data'
