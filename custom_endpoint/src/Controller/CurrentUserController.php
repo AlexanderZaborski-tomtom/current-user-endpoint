@@ -22,8 +22,9 @@ class CurrentUserController extends ControllerBase {
   private $currentUserService;
 
   /**
-   * @param \Drupal\custom_endpoint\CurrentUserService $current_user
    * The current user service.
+   *
+   * @param \Drupal\custom_endpoint\CurrentUserService $current_user
    */
   public function __construct(CurrentUserService $current_user) {
     $this->currentUserService = $current_user;

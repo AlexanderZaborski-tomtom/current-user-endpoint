@@ -14,15 +14,11 @@ class TimestampUsersController extends ControllerBase {
   private $start_date;
   private $end_date;
 
-  /**
-   * Get parameter values
-   */
-  function getParams(Request $request) {
+  function renderApi(Request $request): JsonResponse {
+
     $start_date = $request->get('start_date');
     $end_date = $request->get('end_date');
-  }
 
-  function renderApi(): JsonResponse {
     return new JsonResponse([
       'Start date' => $start_date,
       'End date' => $end_date
