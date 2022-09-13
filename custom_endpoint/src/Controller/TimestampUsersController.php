@@ -11,8 +11,12 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class TimestampUsersController extends ControllerBase {
 
   function renderApi(): JsonResponse {
+    $start_date = \Drupal::routeMatch()->getRawParameter('start_date');
+    $end_date = \Drupal::routeMatch()->getRawParameter('end_date');
+
     return new JsonResponse([
-      'Test' => 'Test message'
+      'Start date' => $start_date,
+      'End date' => $end_date
     ]);
   }
 
