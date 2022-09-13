@@ -14,6 +14,10 @@ use Drupal\custom_endpoint\CurrentUserService;
  */
 class CustomEndpointController extends ControllerBase {
 
+  /**
+   * Variable to store the Current User service
+   * @var type \Drupal\custom_endpoint\CurrentUserService
+   */
   private $currentUserService;
 
   /**
