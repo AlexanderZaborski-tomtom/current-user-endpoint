@@ -19,7 +19,7 @@ class CurrentUserController extends ControllerBase {
    *
    * @var \Drupal\custom_endpoint\CurrentUserService
    */
-  private $currentUserService;
+  private $current_user_service;
 
   /**
    * The current user service.
@@ -27,7 +27,7 @@ class CurrentUserController extends ControllerBase {
    * @param \Drupal\custom_endpoint\CurrentUserService $current_user
    */
   public function __construct(CurrentUserService $current_user) {
-    $this->currentUserService = $current_user;
+    $this->current_user_service = $current_user;
   }
 
   /**
@@ -49,7 +49,7 @@ class CurrentUserController extends ControllerBase {
   public function renderApi(): JsonResponse {
 
     return new JsonResponse([
-      'data' => $this->currentUserService->getResults(),
+      'data' => $this->current_user_service->getResults(),
       'method' => 'GET',
     ]);
   }

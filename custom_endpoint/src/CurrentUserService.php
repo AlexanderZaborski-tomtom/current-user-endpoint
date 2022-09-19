@@ -5,7 +5,7 @@ namespace Drupal\custom_endpoint;
 use Drupal\Core\Session\AccountInterface;
 
 /**
- * Custom Endpoint Service class
+ * Service class for current user
  */
 class CurrentUserService {
 
